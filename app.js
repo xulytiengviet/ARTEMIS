@@ -35,7 +35,7 @@
     const el=$('tapIndicator');el.style.left=x+'%';el.style.top=y+'%';el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop');
   }
   function wallpaper(){
-    return '<div class="home-wallpaper"><div class="home-clock">09:41</div><div class="home-date">Thứ Tư, ngày 21 tháng 10</div><div class="home-weather">☀ 29°C · Thành phố Hồ Chí Minh</div>'+
+    return '<div class="home-wallpaper"><div class="home-clock">'+clock()+'</div><div class="home-date">'+new Intl.DateTimeFormat('vi-VN',{weekday:'long',day:'numeric',month:'long'}).format(new Date())+'</div><div class="home-weather">◌ Bản trình diễn · TP. Hồ Chí Minh</div>'+
     '<div class="home-search"><span>G　Tìm kiếm trên thiết bị</span><span>◉</span></div>'+
     '<div class="home-apps"><button class="app-launcher map-action" data-goto="1" type="button"><span class="app-tile map-logo">⌖</span><span>Bản đồ</span></button>'+
     '<button class="app-launcher map-action" data-goto="5" type="button"><span class="app-tile yt-logo"><span class="play-logo">▶</span></span><span>YouTube</span></button>'+
