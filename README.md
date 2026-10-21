@@ -66,5 +66,6 @@ Video chỉ được tải qua YouTube khi người xem chủ động nhấn nú
 - Không có mã theo dõi phân tích.
 - Không gọi API kiểm soát thiết bị.
 - Liên kết bên ngoài: GitHub, Google Maps và YouTube; kết nối nhúng YouTube chỉ được kích hoạt sau tương tác của người xem.
+- Kiểu chữ có thể tải qua Google Fonts khi người xem mở trang. Nếu không thể kết nối, trang tự dùng phông hệ thống.
 
 **Bản mô phỏng không liên kết, không được tài trợ hoặc bảo trợ bởi Google hay YouTube.** Tên ứng dụng và tên nhạc chỉ dùng để mô tả kịch bản.
