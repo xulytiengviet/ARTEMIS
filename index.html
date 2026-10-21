@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050609">
+  <meta name="description" content="ARTEMIS — phòng trình diễn mô phỏng tác tử AI điều khiển điện thoại Android bằng tiếng Việt. Thử quy trình Google Maps → tổng thời gian lái xe → YouTube / Coldplay.">
+  <meta property="og:title" content="ARTEMIS — Phòng mô phỏng điện thoại AI">
+  <meta property="og:description" content="Trình diễn tương tác bằng tiếng Việt: điều hướng Google Maps và mở nhạc Coldplay trên YouTube.">
+  <title>ARTEMIS | Phòng mô phỏng điện thoại AI</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23090a10'/%3E%3Cpath d='M32 9 53 49H11L32 9Zm0 17L24 43h16L32 26Z' fill='%239d8aff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#dau-trang" aria-label="ARTEMIS — về đầu trang">
+      <span class="brand-symbol" aria-hidden="true">A<span class="symbol-dot"></span></span>
+      <span class="brand-text"><strong>ARTEMIS</strong><small>PHÒNG THÍ NGHIỆM TÁC TỬ DI ĐỘNG</small></span>
+    </a>
+    <div class="topbar-end">
+      <span class="header-chip"><span class="pulse-dot"></span> BẢN TRÌNH DIỄN TRÊN TRÌNH DUYỆT</span>
+      <a class="header-link" href="https://github.com/xulytiengviet/ARTEMIS" target="_blank" rel="noopener noreferrer">Mã nguồn <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main id="dau-trang">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="eyebrow"><span class="dash"></span> ARTEMIS / THỰC NGHIỆM 01 <span class="dash"></span></div>
+      <h1 id="page-title">Một câu lệnh. <span>Nhiều thao tác.</span><br>Một chiếc điện thoại.</h1>
+      <p>Quan sát tác tử AI thực hiện liên tiếp các bước trên điện thoại Android: lập tuyến đường, cộng thời gian lái xe, sau đó chuyển sang YouTube tìm nhạc Coldplay.</p>
+    </section>
+    <section class="workspace" aria-label="Không gian mô phỏng">
+      <aside class="sidebar leftbar" aria-label="Kịch bản và điều khiển">
+        <section class="panel mission">
+          <div class="panel-overline">01 / NHIỆM VỤ ĐẦU VÀO</div>
+          <div class="panel-heading"><span class="mini-icon violet">✦</span><h2>Yêu cầu dành cho AI</h2></div>
+          <div class="prompt-quote">“Mở Google Maps, thiết lập các chặng lái xe tại TP.HCM, tính tổng thời gian di chuyển. Sau đó mở YouTube và phát một bài hát của Coldplay.”</div>
+          <div class="prompt-details">
+            <div><span class="mini-pin maps-pin"></span><span>Google Maps</span><strong>3 chặng mẫu</strong></div>
+            <div><span class="mini-pin music-pin"></span><span>YouTube</span><strong>Coldplay</strong></div>
+          </div>
+          <p class="helper-text">Mô phỏng trực quan, không thao tác trên tài khoản hoặc thiết bị thật.</p>
+        </section>
+        <section class="panel steps-panel">
+          <div class="panel-overline">02 / HÀNH TRÌNH TỰ ĐỘNG</div>
+          <div class="panel-heading"><span class="mini-icon blue">◷</span><h2>Quy trình thực hiện</h2></div>
+          <ol id="timeline" class="timeline" aria-label="Các bước của tác tử"></ol>
+          <p class="hint">Bấm từng bước để xem trực tiếp trên điện thoại.</p>
+        </section>
+      </aside>
+      <section class="device-zone" aria-label="Điện thoại Android mô phỏng">
+        <div class="device-topline">
+          <span><span class="live-dot"></span> MÀN HÌNH ANDROID</span>
+          <span id="deviceMode" class="device-mode">ĐANG CHỜ LỆNH</span>
+        </div>
+        <div class="phone-wrap">
+          <div class="phone-side-button side-power" aria-hidden="true"></div>
+          <div class="phone-side-button side-volume" aria-hidden="true"></div>
+          <div class="phone" id="phone">
+            <div class="phone-bezel">
+              <div class="phone-screen">
+                <div class="camera" aria-hidden="true"></div>
+                <div class="statusbar"><span id="clock">09:41</span><div class="status-icons" aria-label="Wi-Fi và pin"><span>▮▮▮</span><span>◕</span><span class="battery"><i></i></span></div></div>
+                <div id="phoneView" class="phone-view" aria-live="polite"></div>
+                <div class="android-nav" aria-label="Thanh điều hướng Android"><div class="gesture"></div></div>
+                <div class="tap-indicator" id="tapIndicator" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="player-toolbar" aria-label="Điều khiển mô phỏng">
+          <button id="restartBtn" class="tool-icon" type="button" title="Bắt đầu lại" aria-label="Bắt đầu lại">↺</button>
+          <button id="prevBtn" class="tool-icon" type="button" title="Bước trước" aria-label="Bước trước">‹</button>
+          <button id="playBtn" class="play-main" type="button"><span id="playIcon">▶</span> <span id="playLabel">Chạy mô phỏng</span></button>
+          <button id="nextBtn" class="tool-icon" type="button" title="Bước tiếp theo" aria-label="Bước tiếp theo">›</button>
+          <button id="speedBtn" class="speed-button" type="button" title="Đổi tốc độ">1×</button>
+        </div>
+        <div class="progress-track" role="progressbar" aria-label="Tiến độ mô phỏng" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack"><span id="progressBar"></span></div>
+        <div class="device-caption"><span id="screenLabel">Màn hình chính</span><span id="stepCount">BƯỚC 01 / 07</span></div>
+      </section>
+      <aside class="sidebar rightbar" aria-label="Báo cáo hoạt động">
+        <section class="panel observation">
+          <div class="panel-overline">03 / TRẠNG THÁI TÁC TỬ</div>
+          <div class="panel-heading"><span class="mini-icon green">◉</span><h2>Quan sát thời gian thực</h2></div>
+          <div class="agent-status"><span id="agentStatusDot" class="agent-dot"></span><div><strong id="agentStatus">Sẵn sàng</strong><small id="agentDetail">Chưa bắt đầu thực hiện</small></div></div>
+          <div class="stats">
+            <div class="stat"><span>SỐ BƯỚC ĐÃ XEM</span><strong id="statSteps">0/7</strong></div>
+            <div class="stat"><span>THỜI GIAN LÁI XE</span><strong id="statTime">—</strong></div>
+          </div>
+        </section>
+        <section class="panel terminal-panel">
+          <div class="terminal-head"><div><span class="panel-overline">04 / NHẬT KÝ THAO TÁC</span><h2>Hoạt động của tác tử</h2></div><span class="terminal-dots">● ● ●</span></div>
+          <div id="eventLog" class="event-log" aria-live="polite" aria-label="Nhật ký hành động"></div>
+        </section>
+        <section class="panel result-panel">
+          <div class="panel-overline">05 / KẾT QUẢ DỰ KIẾN</div>
+          <div class="result-inline"><div class="round-icon">✓</div><div><strong id="resultTitle">Đang chờ tác vụ</strong><small id="resultDetail">Tổng hợp thời gian và chuyển ứng dụng</small></div></div>
+          <button class="outline-link" id="copyBtn" type="button">Sao chép kết quả <span aria-hidden="true">↗</span></button>
+        </section>
+      </aside>
+    </section>
+    <div class="disclaimer"><span aria-hidden="true">ⓘ</span> <strong>Lưu ý:</strong> Đây là bản mô phỏng giao diện và hành động để giới thiệu ARTEMIS. Thời gian lái xe là dữ liệu mẫu, không phải thời gian thực từ Google Maps. Video được cung cấp qua trình phát YouTube chính thức khi người dùng chủ động nhấn phát.</div>
+    <footer class="footer"><span>ARTEMIS · BẢN TRÌNH DIỄN TIẾNG VIỆT</span><span>Tham khảo dự án <a href="https://github.com/google/artemis" target="_blank" rel="noopener noreferrer">google/artemis ↗</a> · Không liên kết hoặc đại diện Google</span></footer>
+  </main>
+</body>
+</html>
